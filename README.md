@@ -1,140 +1,102 @@
-# 🦅 ANKABYTE — Sourcing Agent (E-Commerce Pro v1.3)
+# 🦅 ANKABYTE — Tedarik Ajanı (E-Ticaret Pro v1.3)
 
-> **BTK Hackathon 2026** — AnkaByte Team  
-> AI-powered supplier risk management dashboard for e-commerce operations
-
----
-
-## 📌 Project Summary & Problem Statement
-
-In today's e-commerce landscape, the greatest threats to store profitability are unplanned cost increases caused by suppliers, defective product shipments, and logistics delays. **Sourcing Agent** is an AI-powered risk management dashboard that continuously monitors suppliers' cost, quality, and logistics performance in multi-layered e-commerce operations — autonomously blocking suppliers that are causing financial damage.
+> **BTK Hackathon 2026** — AnkaByte Ekibi Yapay zeka destekli tedarikçi risk yönetim dashboard'u
 
 ---
 
-## 🛠️ Technology Stack
+## 📌 Proje Özeti ve Çözülen Problem
 
-| Layer | Technology |
-|-------|------------|
-| **Frontend** | Next.js (React Framework), Tailwind CSS (Cyberpunk / Dark Mode UI) |
+Günümüz e-ticaret dünyasında mağazaların kârlılık marjını tehdit eden en büyük unsurlar; tedarikçi kaynaklı plansız maliyet artışları, kusurlu ürün sevkiyatları ve lojistik gecikmeleridir. **Tedarik Ajanı**, çok katmanlı e-ticaret operasyonlarında kârlılığı korumak adına tedarikçilerin maliyet, kalite ve lojistik performanslarını anlık olarak denetleyen ve zarar ettiren firmaları otonom olarak engelleyen yapay zeka tabanlı bir risk yönetim dashboard'udur.
+
+---
+
+## 🛠️ Kullanılan Teknolojiler
+
+| Katman | Teknoloji |
+|--------|-----------|
+| **Frontend** | Next.js (React Framework), Tailwind CSS (Siberpunk / Dark Mode UI) |
 | **Backend** | Node.js, Express API |
-| **Database** | SQLite Database (sourcing.db) |
-| **AI Architecture** | LLM Hybrid Agentic RAG Architecture (Simulated Autonomous Agent Engine) |
+| **Veri Yönetimi** | SQLite Database (sourcing.db) |
+| **Yapay Zeka** | LLM Hybrid Agentic RAG Architecture (Simüle Otonom Ajan Motoru) |
 
 ---
 
-## 🚀 Core Features & Benefits
+## 🚀 Temel Özellikler ve Faydalar
 
-### 1. 🤖 Autonomous Risk Analysis Engine (Phoenix Engine)
-Asynchronously scans **93 global and local suppliers** in the database. Scores price volatility, defective product ratio, and logistics delay indexes through an AI-powered architecture.
+### 1. 🤖 Otonom Risk Analiz Motoru (Phoenix Engine)
+Veritabanındaki **93 küresel ve yerel tedarikçiyi** asenkron olarak tarar. Fiyat kararsızlığı, hatalı ürün payı ve lojistik gecikme endekslerini yapay zeka mimarisiyle puanlar.
 
-### 2. ⚡ Live Agent Operation Flow (Agentic Autonomy)
-Autonomously detects suppliers with a threat score of **75 and above**. Displays newly blocked suppliers as 🔴 **danger** and corporate suppliers recovering from risk thresholds as 🟢 **success** logs in the live operations panel — generating category-specific autonomous justifications for each action.
+### 2. ⚡ Canlı Ajan Operasyon Akışı (Agentic Autonomy)
+Tehdit skoru **75 ve üzeri** olan firmaları otonom olarak tespit eder. Canlı akış panelinde yeni engellenen firmaları 🔴 **danger**, risk sınırından kurtulan kurumsal firmaları ise 🟢 **success** loglarıyla kategoriye özel otonom gerekçeler üreterek listeler.
 
-### 3. 📊 Enterprise-Grade User Dashboard
-A production-ready dashboard suitable for large-scale e-commerce brands (SaaS), featuring clear statistical cards and a dynamic category localization engine.
+### 3. 📊 Kullanıcı Dostu Kurumsal Dashboard
+Büyük ölçekli e-ticaret markalarının (SaaS) doğrudan yayına alabileceği nitelikte, anlaşılır istatistik kartları ve dinamik kategori Türkçeleştirme motoru barındırır.
 
 ---
 
-## 🗄️ Database Architecture
+## 🗄️ Veritabanı Mimarisi
 
-```
-suppliers (92 records)
-├── id, name, category, location
-├── price_tl, price_score, quality_score
-└── contact
+suppliers (92 kayıt)
+- id, name, category, location
+- price_tl, price_score, quality_score
+- contact
 
 products
-├── id, supplier_id (FK → suppliers)
-├── name, brand, price_tl, stock
-└── FOREIGN KEY (supplier_id)
+- id, supplier_id (FK -> suppliers)
+- name, brand, price_tl, stock
 
 reviews
-├── id, supplier_id (FK → suppliers)
-├── rating, comment
-└── FOREIGN KEY (supplier_id)
+- id, supplier_id (FK -> suppliers)
+- rating, comment
 
-searches (audit log)
-└── id, query, result, created_at
-```
+searches (arama geçmişi)
+- id, query, result, created_at
 
 ---
 
-## 🤖 Agentic Architecture
+## 📡 API Endpoint'leri
 
-```
-User inputs category + product
-        ↓
-Suppliers fetched from database
-        ↓
-AI analyzes supplier risk scores
-        ↓
-Risk level assigned (low / medium / high)
-        ↓
-Autonomous blocking of high-risk suppliers
-        ↓
-Real-time dashboard update with logs
-```
+| Method | Endpoint | Açıklama |
+|--------|----------|----------|
+| GET | `/api/suppliers` | Tüm tedarikçileri listele |
+| GET | `/api/suppliers?category=electronics` | Kategoriye göre filtrele |
+| POST | `/api/suppliers` | Yeni tedarikçi ekle |
+| POST | `/api/search` | Tedarikçi ara |
+| POST | `/api/analyze` | AI ile risk analizi yap |
 
 ---
 
-## 📡 API Endpoints
+## 🚀 Kurulum
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/suppliers` | List all suppliers |
-| GET | `/api/suppliers?category=electronics` | Filter by category |
-| POST | `/api/suppliers` | Add new supplier |
-| POST | `/api/search` | Search suppliers |
-| POST | `/api/analyze` | AI risk analysis |
-
----
-
-## 🚀 Installation
-
-```bash
-# Clone the repository
 git clone https://github.com/vildannrc/AnkaByte-Sourcing-Agent.git
 cd AnkaByte-Sourcing-Agent
-
-# Install dependencies
 npm install
-
-# Set environment variables
-# Create .env.local and add your API key:
-# GEMINI_API_KEY=your_key_here
-
-# Seed the database
 node app/api/seed.js
-
-# Start development server
 npm run dev
-```
 
 ---
 
-## 👥 Team — AnkaByte
+## 👥 Ekip — AnkaByte
 
-| Name | Role |
-|------|------|
-| 👤 VİLDAN NUR NARİÇ(https://github.com/vildannrc)| Backend & Database |
-| 👤 BERRAK GÜNDÜZ(https://github.com/berry-jam04) | AI & API Integration |
-| 👤 MİSLİNA ÇİÇEKÇİ(https://github.com/mslncckc)  | Frontend & UI/UX |
+| İsim | Rol |
+|------|-----|
+| 👤 VİLDAN NUR NARİÇ(https://github.com/vildannrc) | Backend & Veritabanı |
+| 👤 BERRAK GÜNDÜZ(https://github.com/berry-jam04)  | Yapay Zeka & API Entegrasyonu |
+| 👤 MİSLİNA ÇİÇEKÇİ(https://github.com/mslncckc)   | Frontend & UI/UX |
 
 ---
 
 ## 🏆 BTK Hackathon 2026
 
-**Evaluation criteria coverage:**
-
-| Criteria | Points | Our Approach |
-|----------|--------|--------------|
-| User Value | 20p | Solves real supplier monopoly problem |
-| Technical Score | 20p | 3 relational tables, REST API, AI integration |
-| Agentic Structure | 10p | Multi-step autonomous AI analysis flow |
-| Innovation | 10p | Unique anti-monopoly concept |
-| User Friendly | 10p | Intuitive dashboard with color-coded risk levels |
-| Team Collaboration | 10p | Clear role separation across 3 members |
-| Presentation | 10p | Live demo with real-time agent operations |
+| Kriter | Puan | Yaklaşımımız |
+|--------|------|--------------|
+| Kullanıcı Değeri | 20p | Gerçek tedarikçi tekelleşme problemini çözüyor |
+| Teknik Puan | 20p | 3 ilişkili tablo, REST API, AI entegrasyonu |
+| Agentic Yapı | 10p | Çok adımlı otonom AI analiz akışı |
+| Yenilikçilik | 10p | Özgün tekelleşme önleme konsepti |
+| Kullanıcı Dostu | 10p | Renk kodlu risk seviyeleri ile sezgisel dashboard |
+| Takım Çalışması | 10p | 3 üye arasında net rol dağılımı |
+| Sunum | 10p | Canlı demo ile gerçek zamanlı ajan operasyonu |
 
 ---
 
