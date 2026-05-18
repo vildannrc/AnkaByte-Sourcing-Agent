@@ -10,27 +10,22 @@ Günümüz e-ticaret dünyasında mağazaların kârlılık marjını tehdit ede
 
 ---
 
-## 🛠️ Kullanılan Teknolojiler
+## 🚀 Temel Özellikler ve Faydalar
 
-| Katman | Teknoloji |
-|--------|-----------|
-| **Frontend** | Next.js (React Framework), Tailwind CSS (Siberpunk / Dark Mode UI) |
-| **Backend** | Node.js, Express API |
-| **Veri Yönetimi** | SQLite Database (sourcing.db) |
-| **Yapay Zeka** | LLM Hybrid Agentic RAG Architecture (Simüle Otonom Ajan Motoru) |
+1. **Otonom Risk Analiz Motoru (Phoenix Engine):** Veritabanındaki 93 küresel ve yerel tedarikçiyi asenkron olarak tarar. Fiyat kararsızlığı, hatalı ürün payı ve lojistik gecikme endekslerini yapay zeka mimarisiyle puanlar.
+
+2. **Canlı Ajan Operasyon Akışı (Agentic Autonomy):** Tehdit skoru 75 ve üzeri olan firmaları otonom olarak tespit eder. Canlı akış panelinde yeni engellenen firmaları kırmızı tehlike (danger), risk sınırından kurtulan kurumsal firmaları ise yeşil onay (success) loglarıyla kategoriye özel otonom gerekçeler üreterek listeler.
+
+3. **Kullanıcı Dostu Kurumsal Dashboard:** Büyük ölçekli e-ticaret markalarının (SaaS) doğrudan yayına alabileceği nitelikte, anlaşılır istatistik kartları ve dinamik kategori Türkçeleştirme motoru barındırır.
 
 ---
 
-## 🚀 Temel Özellikler ve Faydalar
+## 🛠️ Kullanılan Teknolojiler
 
-### 1. 🤖 Otonom Risk Analiz Motoru (Phoenix Engine)
-Veritabanındaki **93 küresel ve yerel tedarikçiyi** asenkron olarak tarar. Fiyat kararsızlığı, hatalı ürün payı ve lojistik gecikme endekslerini yapay zeka mimarisiyle puanlar.
-
-### 2. ⚡ Canlı Ajan Operasyon Akışı (Agentic Autonomy)
-Tehdit skoru **75 ve üzeri** olan firmaları otonom olarak tespit eder. Canlı akış panelinde yeni engellenen firmaları 🔴 **danger**, risk sınırından kurtulan kurumsal firmaları ise 🟢 **success** loglarıyla kategoriye özel otonom gerekçeler üreterek listeler.
-
-### 3. 📊 Kullanıcı Dostu Kurumsal Dashboard
-Büyük ölçekli e-ticaret markalarının (SaaS) doğrudan yayına alabileceği nitelikte, anlaşılır istatistik kartları ve dinamik kategori Türkçeleştirme motoru barındırır.
+- **Frontend Mimarisi:** Next.js (React Framework), Tailwind CSS (Siberpunk / Dark Mode UI)
+- **Backend Altyapısı:** Node.js, Express API
+- **Veri Yönetimi:** SQLite Database (sourcing.db)
+- **Yapay Zeka Mimarisi:** LLM Hybrid Agentic RAG Architecture (Simüle Otonom Ajan Motoru)
 
 ---
 
@@ -66,6 +61,12 @@ searches (arama geçmişi)
 
 ---
 
+## 🖥️ Dağıtım Durumu
+
+Proje şu an **yerel geliştirme ortamında (localhost)** çalışmaktadır. SQLite veritabanı senkronizasyonuyla **tam fonksiyonel (fully-functional)** olarak çalışan bir **Stand-alone MVP**'dir. Ürün, bulut altyapısına taşınmaya hazır ölçeklenebilir bir mimariyle geliştirilmiş olup bu aşamada yerel ortamda eksiksiz biçimde çalışmaktadır.
+
+---
+
 ## 🚀 Kurulum
 
 git clone https://github.com/vildannrc/AnkaByte-Sourcing-Agent.git
@@ -83,20 +84,6 @@ npm run dev
 | 👤 VİLDAN NUR NARİÇ(https://github.com/vildannrc) | Backend & Veritabanı |
 | 👤 BERRAK GÜNDÜZ(https://github.com/berry-jam04)  | Yapay Zeka & API Entegrasyonu |
 | 👤 MİSLİNA ÇİÇEKÇİ(https://github.com/mslncckc)   | Frontend & UI/UX |
-
----
-
-## 🏆 BTK Hackathon 2026
-
-| Kriter | Puan | Yaklaşımımız |
-|--------|------|--------------|
-| Kullanıcı Değeri | 20p | Gerçek tedarikçi tekelleşme problemini çözüyor |
-| Teknik Puan | 20p | 3 ilişkili tablo, REST API, AI entegrasyonu |
-| Agentic Yapı | 10p | Çok adımlı otonom AI analiz akışı |
-| Yenilikçilik | 10p | Özgün tekelleşme önleme konsepti |
-| Kullanıcı Dostu | 10p | Renk kodlu risk seviyeleri ile sezgisel dashboard |
-| Takım Çalışması | 10p | 3 üye arasında net rol dağılımı |
-| Sunum | 10p | Canlı demo ile gerçek zamanlı ajan operasyonu |
 
 ---
 
