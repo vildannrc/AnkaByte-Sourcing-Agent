@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 Sourcing Agent - Fahiş Fiyat Tespiti
 
 AI destekli tedarikçi fiyat analizi uygulaması. Gemini AI kullanarak tedarikçilerin fahiş fiyat uygulayıp uygulamadığını tespit eder.
@@ -102,3 +103,6 @@ vercel --prod
 ```
 
 **Not:** `.env.local` dosyasındaki API anahtarınızı Vercel environment variables'a eklemeyi unutmayın.
+=======
+# AnkaByte-Sourcing-Agent
+>>>>>>> 7b31aaef360364152fdb2706e3f5611339d2d6c7
