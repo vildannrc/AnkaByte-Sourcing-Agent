@@ -1,108 +1,141 @@
-<<<<<<< HEAD
-# 🚀 Sourcing Agent - Fahiş Fiyat Tespiti
+# 🦅 ANKABYTE — Sourcing Agent (E-Commerce Pro v1.3)
 
-AI destekli tedarikçi fiyat analizi uygulaması. Gemini AI kullanarak tedarikçilerin fahiş fiyat uygulayıp uygulamadığını tespit eder.
+> **BTK Hackathon 2026** — AnkaByte Team  
+> AI-powered supplier risk management dashboard for e-commerce operations
 
-## Özellikler
+---
 
-- ✅ **92 Tedarikçi Verisi**: Elektronik, bilgisayar ve mobil kategorilerinde
-- ✅ **AI Fiyat Analizi**: Google Gemini ile akıllı fiyat risk tespiti
-- ✅ **Risk Seviyeleri**: Düşük/Orta/Yüksek risk ile renkli gösterim
-- ✅ **Kategori Filtreleme**: Kategoriye göre tedarikçi listeleme
-- ✅ **Responsive Tasarım**: Mobil uyumlu modern arayüz
+## 📌 Project Summary & Problem Statement
 
-## Kurulum
+In today's e-commerce landscape, the greatest threats to store profitability are unplanned cost increases caused by suppliers, defective product shipments, and logistics delays. **Sourcing Agent** is an AI-powered risk management dashboard that continuously monitors suppliers' cost, quality, and logistics performance in multi-layered e-commerce operations — autonomously blocking suppliers that are causing financial damage.
 
-1. **Bağımlılıkları yükleyin:**
-   ```bash
-   npm install
-   ```
+---
 
-2. **Google Gemini API Anahtarı alın:**
-   - [Google AI Studio](https://makersuite.google.com/app/apikey) adresine gidin
-   - Yeni bir API anahtarı oluşturun
+## 🛠️ Technology Stack
 
-3. **Environment değişkenlerini ayarlayın:**
-   `.env.local` dosyasını oluşturun ve API anahtarınızı ekleyin:
-   ```
-   GOOGLE_API_KEY=your_actual_api_key_here
-   ```
+| Layer | Technology |
+|-------|------------|
+| **Frontend** | Next.js (React Framework), Tailwind CSS (Cyberpunk / Dark Mode UI) |
+| **Backend** | Node.js, Express API |
+| **Database** | SQLite Database (sourcing.db) |
+| **AI Architecture** | LLM Hybrid Agentic RAG Architecture (Simulated Autonomous Agent Engine) |
 
-4. **Veritabanını hazırlayın:**
-   ```bash
-   node app/api/seed.js
-   ```
+---
 
-5. **Uygulamayı başlatın:**
-   ```bash
-   npm run dev
-   ```
+## 🚀 Core Features & Benefits
 
-6. **Tarayıcıda açın:** [http://localhost:3000](http://localhost:3000)
+### 1. 🤖 Autonomous Risk Analysis Engine (Phoenix Engine)
+Asynchronously scans **93 global and local suppliers** in the database. Scores price volatility, defective product ratio, and logistics delay indexes through an AI-powered architecture.
 
-## Kullanım
+### 2. ⚡ Live Agent Operation Flow (Agentic Autonomy)
+Autonomously detects suppliers with a threat score of **75 and above**. Displays newly blocked suppliers as 🔴 **danger** and corporate suppliers recovering from risk thresholds as 🟢 **success** logs in the live operations panel — generating category-specific autonomous justifications for each action.
 
-1. **Kategori Seçin:** Elektronik, bilgisayar veya mobil kategorilerinden birini seçin
-2. **Ürün Adı Girin:** Analiz edilecek ürünü belirtin (örn: "Laptop", "Akıllı Telefon")
-3. **Tedarikçileri Getirin:** Seçilen kategorideki tedarikçileri listeleyin
-4. **AI Analizi Yapın:** Gemini AI ile fiyat risklerini analiz ettirin
+### 3. 📊 Enterprise-Grade User Dashboard
+A production-ready dashboard suitable for large-scale e-commerce brands (SaaS), featuring clear statistical cards and a dynamic category localization engine.
 
-## API Endpoints
+---
 
-- `GET /api/suppliers` - Tüm tedarikçileri getir
-- `GET /api/suppliers?category=electronics` - Kategoriye göre filtrele
-- `POST /api/analyze` - AI fiyat analizi
-- `POST /api/search` - Arama loglaması
+## 🗄️ Database Architecture
 
-## Teknoloji Stack
+```
+suppliers (92 records)
+├── id, name, category, location
+├── price_tl, price_score, quality_score
+└── contact
 
-- **Frontend:** Next.js 16, React 19, Tailwind CSS
-- **Backend:** Next.js API Routes
-- **Database:** SQLite (better-sqlite3)
-- **AI:** Google Gemini 1.5 Flash
-- **Styling:** Tailwind CSS
+products
+├── id, supplier_id (FK → suppliers)
+├── name, brand, price_tl, stock
+└── FOREIGN KEY (supplier_id)
 
-## Veri Yapısı
+reviews
+├── id, supplier_id (FK → suppliers)
+├── rating, comment
+└── FOREIGN KEY (supplier_id)
 
-### Suppliers Tablosu
-```sql
-CREATE TABLE suppliers (
-  id INTEGER PRIMARY KEY,
-  name TEXT NOT NULL,
-  category TEXT NOT NULL,
-  location TEXT NOT NULL,
-  price_score REAL NOT NULL,
-  quality_score REAL NOT NULL,
-  price_tl REAL NOT NULL,
-  contact TEXT
-);
+searches (audit log)
+└── id, query, result, created_at
 ```
 
-### Risk Seviyeleri
-- 🟢 **Düşük Risk (low)**: Güvenli fiyatlar
-- 🟡 **Orta Risk (medium)**: Dikkat edilmesi gereken fiyatlar
-- 🔴 **Yüksek Risk (high)**: Fahiş fiyat - kaçınılmalı
+---
 
-## Geliştirme
+## 🤖 Agentic Architecture
 
-Kod değişikliklerinden sonra veritabanını yeniden oluşturmak için:
+```
+User inputs category + product
+        ↓
+Suppliers fetched from database
+        ↓
+AI analyzes supplier risk scores
+        ↓
+Risk level assigned (low / medium / high)
+        ↓
+Autonomous blocking of high-risk suppliers
+        ↓
+Real-time dashboard update with logs
+```
+
+---
+
+## 📡 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/suppliers` | List all suppliers |
+| GET | `/api/suppliers?category=electronics` | Filter by category |
+| POST | `/api/suppliers` | Add new supplier |
+| POST | `/api/search` | Search suppliers |
+| POST | `/api/analyze` | AI risk analysis |
+
+---
+
+## 🚀 Installation
+
 ```bash
-# Mevcut veritabanını sil
-Remove-Item sourcing.db
+# Clone the repository
+git clone https://github.com/vildannrc/AnkaByte-Sourcing-Agent.git
+cd AnkaByte-Sourcing-Agent
 
-# Yeniden oluştur
+# Install dependencies
+npm install
+
+# Set environment variables
+# Create .env.local and add your API key:
+# GEMINI_API_KEY=your_key_here
+
+# Seed the database
 node app/api/seed.js
+
+# Start development server
+npm run dev
 ```
 
-## Dağıtım
+---
 
-Vercel'e dağıtmak için:
-```bash
-npm run build
-vercel --prod
-```
+## 👥 Team — AnkaByte
 
-**Not:** `.env.local` dosyasındaki API anahtarınızı Vercel environment variables'a eklemeyi unutmayın.
-=======
-# AnkaByte-Sourcing-Agent
->>>>>>> 7b31aaef360364152fdb2706e3f5611339d2d6c7
+| Name | Role |
+|------|------|
+| 👤 VİLDAN NUR NARİÇ(https://github.com/vildannrc)| Backend & Database |
+| 👤 BERRAK GÜNDÜZ(https://github.com/berry-jam04) | AI & API Integration |
+| 👤 MİSLİNA ÇİÇEKÇİ(https://github.com/mslncckc)  | Frontend & UI/UX |
+
+---
+
+## 🏆 BTK Hackathon 2026
+
+**Evaluation criteria coverage:**
+
+| Criteria | Points | Our Approach |
+|----------|--------|--------------|
+| User Value | 20p | Solves real supplier monopoly problem |
+| Technical Score | 20p | 3 relational tables, REST API, AI integration |
+| Agentic Structure | 10p | Multi-step autonomous AI analysis flow |
+| Innovation | 10p | Unique anti-monopoly concept |
+| User Friendly | 10p | Intuitive dashboard with color-coded risk levels |
+| Team Collaboration | 10p | Clear role separation across 3 members |
+| Presentation | 10p | Live demo with real-time agent operations |
+
+---
+
+*Made with ❤️ by AnkaByte — BTK Hackathon 2026*
