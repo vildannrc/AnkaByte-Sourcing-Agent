@@ -31,7 +31,7 @@ Günümüz e-ticaret dünyasında mağazaların kârlılık marjını tehdit ede
 
 ## 🗄️ Veritabanı Mimarisi
 
-suppliers (92 kayıt)
+suppliers (93 kayıt)
 - id, name, category, location
 - price_tl, price_score, quality_score
 - contact
@@ -63,7 +63,7 @@ searches (arama geçmişi)
 
 ## 🖥️ Dağıtım Durumu
 
-Proje şu an **yerel geliştirme ortamında (localhost)** çalışmaktadır. SQLite veritabanı senkronizasyonuyla **tam fonksiyonel (fully-functional)** olarak çalışan bir **Stand-alone MVP**'dir. Ürün, bulut altyapısına taşınmaya hazır ölçeklenebilir bir mimariyle geliştirilmiş olup bu aşamada yerel ortamda eksiksiz biçimde çalışmaktadır.
+"Proje şu an **yerel geliştirme ortamında (localhost)** bir sandbox olarak çalışmaktadır. SQLite veritabanı senkronizasyonuyla **tam fonksiyonel (fully-functional)** olarak çalışan bir **Stand-alone MVP**dir. Ürün, henüz canlı ortama (production) alınmamış olup, bulut altyapısına taşınmaya hazır ve ölçeklenebilir bir mimariyle geliştirilmiştir; bu aşamada test ve sandbox ortamında eksiksiz biçimde işlev göstermektedir."
 
 ---
 
